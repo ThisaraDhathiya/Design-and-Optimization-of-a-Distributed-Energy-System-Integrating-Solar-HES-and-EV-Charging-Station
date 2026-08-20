@@ -1,0 +1,18 @@
+! Monitors.dss - University of Ruhuna Faculty of Engineering
+! UPDATED June 2026
+
+New Monitor.Mon_Transformer  Element=Transformer.MainTransformer Terminal=2 Mode=1 ppolar=No
+New Monitor.Mon_MainBus      Element=Line.Tx_to_Panel            Terminal=2 Mode=0
+New Monitor.Mon_Battery      Element=Storage.Battery             Terminal=1 Mode=3
+New Monitor.Mon_SuperCap     Element=Storage.SuperCap            Terminal=1 Mode=3
+New Monitor.Mon_Grid         Element=Transformer.MainTransformer Terminal=1 Mode=1 ppolar=No
+New Monitor.Mon_EV           Element=Line.Panel_EVBus            Terminal=2 Mode=1 ppolar=No
+New Monitor.Mon_V_Gym        Element=Line.HostelD_Gym            Terminal=2 Mode=0
+New Monitor.Mon_V_HostelD    Element=Line.Panel_HostelD          Terminal=2 Mode=0
+New Monitor.Mon_V_HostelC    Element=Line.Panel_HostelC          Terminal=2 Mode=0
+New Monitor.Mon_V_Library    Element=Line.Panel_Library          Terminal=2 Mode=0
+New Monitor.Mon_V_ElecDept   Element=Line.Panel_ElecDept         Terminal=2 Mode=0
+New Monitor.Mon_V_LTDB       Element=Line.Panel_LTDB             Terminal=2 Mode=0
+New Monitor.Mon_PV_ElecDept  Element=PVSystem.PV_ElecDept        Terminal=1 Mode=1 ppolar=No
+New Monitor.Mon_PV_MechDept  Element=PVSystem.PV_MechDept        Terminal=1 Mode=1 ppolar=No
+New Monitor.Mon_PV_CivilDept Element=PVSystem.PV_CivilDept       Terminal=1 Mode=1 ppolar=No

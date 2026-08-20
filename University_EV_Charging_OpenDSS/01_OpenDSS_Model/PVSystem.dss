@@ -1,0 +1,22 @@
+! PVSystem.dss - University of Ruhuna Faculty of Engineering
+! UPDATED June 2026 - 17 buildings, total 2089.35 kWp
+! Parameter: Pmpp only (kWrated removed for compatibility)
+
+New PVSystem.PV_Admin Bus1=AdminBus Phases=3 kV=0.415 kVA=87.5 Pmpp=79.65 pf=1.0 Daily=Ruhuna_Irradiance %cutin=5 %cutout=5
+New PVSystem.PV_Library Bus1=LibraryBus Phases=3 kV=0.415 kVA=137.5 Pmpp=125.1 pf=1.0 Daily=Ruhuna_Irradiance %cutin=5 %cutout=5
+New PVSystem.PV_Auditorium Bus1=AuditoriumBus Phases=3 kV=0.415 kVA=230.8 Pmpp=210.0 pf=1.0 Daily=Ruhuna_Irradiance %cutin=5 %cutout=5
+New PVSystem.PV_LectureTheatre Bus1=LectureTheatreBus Phases=3 kV=0.415 kVA=230.8 Pmpp=210.0 pf=1.0 Daily=Ruhuna_Irradiance %cutin=5 %cutout=5
+New PVSystem.PV_UpperCanteen Bus1=UpperCanteenBus Phases=3 kV=0.415 kVA=45.2 Pmpp=41.1 pf=1.0 Daily=Ruhuna_Irradiance %cutin=5 %cutout=5
+New PVSystem.PV_HostelC Bus1=HostelCBus Phases=3 kV=0.415 kVA=148.7 Pmpp=135.3 pf=1.0 Daily=Ruhuna_Irradiance %cutin=5 %cutout=5
+New PVSystem.PV_ElecDept Bus1=ElecDeptBus Phases=3 kV=0.415 kVA=189.9 Pmpp=172.8 pf=1.0 Daily=Ruhuna_Irradiance %cutin=5 %cutout=5
+New PVSystem.PV_MechDept Bus1=MechDeptBus Phases=3 kV=0.415 kVA=189.9 Pmpp=172.8 pf=1.0 Daily=Ruhuna_Irradiance %cutin=5 %cutout=5
+New PVSystem.PV_CivilDept Bus1=CivilDeptBus Phases=3 kV=0.415 kVA=189.9 Pmpp=172.8 pf=1.0 Daily=Ruhuna_Irradiance %cutin=5 %cutout=5
+New PVSystem.PV_GuestHouse Bus1=GuestHouseBus Phases=3 kV=0.415 kVA=56.7 Pmpp=51.6 pf=1.0 Daily=Ruhuna_Irradiance %cutin=5 %cutout=5
+New PVSystem.PV_Gym Bus1=GymBus Phases=3 kV=0.415 kVA=171.8 Pmpp=156.3 pf=1.0 Daily=Ruhuna_Irradiance %cutin=5 %cutout=5
+New PVSystem.PV_HostelD Bus1=HostelDBus Phases=3 kV=0.415 kVA=122.5 Pmpp=111.45 pf=1.0 Daily=Ruhuna_Irradiance %cutin=5 %cutout=5
+New PVSystem.PV_HostelBlock Bus1=HostelBlockBus Phases=3 kV=0.415 kVA=35.4 Pmpp=32.25 pf=1.0 Daily=Ruhuna_Irradiance %cutin=5 %cutout=5
+New PVSystem.PV_Workshop Bus1=MechWorkshopBus Phases=3 kV=0.415 kVA=223.2 Pmpp=203.1 pf=1.0 Daily=Ruhuna_Irradiance %cutin=5 %cutout=5
+New PVSystem.PV_LowerCanteen Bus1=LowerCanteenBus Phases=3 kV=0.415 kVA=137.5 Pmpp=125.1 pf=1.0 Daily=Ruhuna_Irradiance %cutin=5 %cutout=5
+
+! Total: 2089.35 kWp across 17 buildings
+! Note: MiddleHostel (HostelF) excluded - no solar panels

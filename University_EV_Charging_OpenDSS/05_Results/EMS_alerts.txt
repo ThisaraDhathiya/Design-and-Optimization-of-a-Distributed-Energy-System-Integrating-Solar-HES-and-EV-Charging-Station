@@ -1,0 +1,38 @@
+EMS ALERT LOG
+==================================================
+[10:00] INFO: Peak shaving 10:00 - BESS 4.5 kW
+[10:15] INFO: Peak shaving 10:15 - BESS 7.7 kW
+[10:30] INFO: Peak shaving 10:30 - BESS 11.3 kW
+[10:45] INFO: Peak shaving 10:45 - BESS 12.9 kW
+[11:00] INFO: Peak shaving 11:00 - BESS 30.2 kW
+[11:15] INFO: Peak shaving 11:15 - BESS 28.3 kW
+[11:30] INFO: Peak shaving 11:30 - BESS 25.4 kW
+[11:45] INFO: Peak shaving 11:45 - BESS 22.1 kW
+[12:00] INFO: Peak shaving 12:00 - BESS 33.0 kW
+[12:15] ALERT: EV needs grid - charging stopped
+[12:30] ALERT: EV needs grid - charging stopped
+[12:45] ALERT: EV needs grid - charging stopped
+[13:00] ALERT: EV needs grid - charging stopped
+[13:15] ALERT: EV needs grid - charging stopped
+[13:30] ALERT: EV needs grid - charging stopped
+[13:45] ALERT: EV needs grid - charging stopped
+[14:00] ALERT: EV needs grid - charging stopped
+[14:15] ALERT: EV needs grid - charging stopped
+[14:30] ALERT: EV needs grid - charging stopped
+[14:45] ALERT: EV needs grid - charging stopped
+[15:00] ALERT: EV needs grid - charging stopped
+[15:15] ALERT: EV needs grid - charging stopped
+[15:30] ALERT: EV needs grid - charging stopped
+[15:45] ALERT: EV needs grid - charging stopped
+[16:00] ALERT: EV needs grid - charging stopped
+[16:15] ALERT: EV needs grid - charging stopped
+[16:30] ALERT: EV needs grid - charging stopped
+[16:45] ALERT: EV needs grid - charging stopped
+[17:00] ALERT: EV needs grid - charging stopped
+[17:15] ALERT: EV needs grid - charging stopped
+[17:30] ALERT: Evening SOC reached 15% - grid taking over
+[17:45] ALERT: EV needs grid - charging stopped
+[18:00] ALERT: EV needs grid - charging stopped
+[18:15] ALERT: EV needs grid - charging stopped
+[18:30] ALERT: EV needs grid - charging stopped
+[18:45] ALERT: EV needs grid - charging stopped

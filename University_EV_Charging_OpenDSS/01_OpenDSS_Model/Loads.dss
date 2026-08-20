@@ -1,0 +1,33 @@
+! Loads.dss - University of Ruhuna Faculty of Engineering
+! UPDATED: Real data logger profiles for ElecDept, Workshop, CivilDept
+! Assumed profiles used for remaining buildings
+! =========================================================
+
+! ---- REAL DATA LOGGER VALUES ----
+! ElecDept  : real data 07/06/2026 (peak 33.33kW, pf=0.976)
+New Load.ElecDept      Bus1=ElecDeptBus       Phases=3 kV=0.415 kW=33.33  kvar=7.45   pf=0.9759 Daily=LS_ElecDept       model=1 Vminpu=0.85 Vmaxpu=1.10
+
+! Workshop   : real data (peak 3.51kW, CT Phase1 corrected)
+New Load.Workshop      Bus1=MechWorkshopBus   Phases=3 kV=0.415 kW=3.51   kvar=5.90   pf=0.5114 Daily=LS_Workshop_Real  model=1 Vminpu=0.85 Vmaxpu=1.10
+
+! CivilDept  : real data (peak 13.50kW, pf=0.865)
+
+! ---- ASSUMED PROFILES (no logger data yet) ----
+New Load.Auditorium      Bus1=AuditoriumBus       Phases=3 kV=0.415 kW=40.940 kvar=16.462 pf=0.9399 Daily=LS_Auditorium_Real model=1
+New Load.Admin           Bus1=AdminBus            Phases=3 kV=0.415 kW=70.690 kvar=40.076 pf=0.8699 Daily=LS_Admin_Real model=1
+New Load.EV            Bus1=EVBus             Phases=3 kV=0.415 kW=0.001  kvar=0.001  pf=0.95 Daily=LS_Teaching    model=1 Vminpu=0.85 Vmaxpu=1.10
+
+! ── REAL DATA LOGGER PROFILES (all buildings) ─────────────────────────────
+New Load.CivilDept       Bus1=CivilDeptBus              Phases=3 kV=0.415 kW=13.450 kvar=8.219 pf=0.8533 Daily=LS_Civil_Real model=1
+New Load.MechDept        Bus1=MechDeptBus               Phases=3 kV=0.415 kW=13.450 kvar=8.219 pf=0.8533 Daily=LS_MechDept_Real model=1
+New Load.LecTheatre      Bus1=LectureTheatreBus         Phases=3 kV=0.415 kW=8.150 kvar=18.777 pf=0.3982 Daily=LS_LecTheatre_Real model=1
+New Load.Library         Bus1=LibraryBus                Phases=3 kV=0.415 kW=9.120 kvar=6.054 pf=0.8332 Daily=LS_Library_Real model=1
+New Load.HostelD         Bus1=HostelDBus                Phases=3 kV=0.415 kW=9.440 kvar=1.957 pf=0.9792 Daily=LS_HostelD_Real model=1
+New Load.HostelC         Bus1=HostelCBus                Phases=3 kV=0.415 kW=9.440 kvar=1.957 pf=0.9792 Daily=LS_HostelC_Real model=1
+New Load.HostelBlock     Bus1=HostelBlockBus            Phases=3 kV=0.415 kW=5.520 kvar=1.144 pf=0.9792 Daily=LS_HostelBlock_Real model=1
+New Load.BoysHostelB     Bus1=BoysHostelBBus            Phases=3 kV=0.415 kW=5.520 kvar=1.144 pf=0.9792 Daily=LS_HostelB_Real model=1
+New Load.HostelF         Bus1=HostelFBus                Phases=3 kV=0.415 kW=5.520 kvar=1.141 pf=0.9793 Daily=LS_HostelF_Real model=1
+New Load.LowerCanteen    Bus1=LowerCanteenBus.1         Phases=1 kV=0.24 kW=12.650 kvar=8.507 pf=0.8298 Daily=LS_LowerCanteen_Real model=1
+New Load.GuestHouse      Bus1=GuestHouseBus             Phases=3 kV=0.415 kW=0.001 kvar=0.001 pf=0.9000 Daily=LS_GuestHouse_Real model=1
+New Load.UpperCanteen    Bus1=UpperCanteenBus.1         Phases=1 kV=0.24 kW=0.001 kvar=0.001 pf=0.9000 Daily=LS_UpperCanteen_Real model=1
+New Load.Gym             Bus1=GymBus                    Phases=3 kV=0.415 kW=0.001 kvar=0.001 pf=0.9000 Daily=LS_Gym_Real model=1

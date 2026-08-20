@@ -1,0 +1,8 @@
+! ============================================================
+! SuperCap.dss - Supercapacitor 1.0kWh / 100kW (provisional)
+! Bus: MainBus (415V, after ATS)
+! Controlled by Python EMS (DispMode=EXTERNAL)
+! Update kWhrated and kWrated when product is confirmed.
+! ============================================================
+
+New Storage.SuperCap Bus1=MainBus phases=3 kV=0.415 kWhrated=1.0 kWrated=100 %stored=80 %reserve=20 %EffCharge=97 %EffDischarge=97 %IdlingkW=0.05 DispMode=EXTERNAL State=IDLING Vminpu=0.90 Vmaxpu=1.10

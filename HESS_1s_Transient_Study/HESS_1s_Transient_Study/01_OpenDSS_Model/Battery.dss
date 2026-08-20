@@ -1,0 +1,78 @@
+! ============================================================
+! Battery.dss
+! University of Ruhuna — Faculty of Engineering
+! Hybrid Energy Storage System — Battery Unit
+! ------------------------------------------------------------
+! Chemistry      : Lithium Iron Phosphate  (LiFePO4 / LFP)
+! Capacity       : 670 kWh  (updated — optimization result, corrects previous 600 kWh)
+! Power rating   : 100 kW   (given)
+! C-rate         : 0.1493   (100 kW ÷ 670 kWh — very gentle)
+! Usable energy  : 502.5 kWh  (SOC 15% – 90%, = 75% of 670)
+! Full charge    : 6.7 hours from 15% to 90% at full power
+! Rated current  : 139 A at 415 V 3-phase
+! Connection bus : MainBus (main LV busbar, after ATS)
+! Controlled by  : Python EMS (ems_controller.py)
+!                  DispMode=EXTERNAL — OpenDSS does NOT dispatch
+!                  Python sends State + kW command each 15-min step
+!
+! LiFePO4 properties used:
+!   Charge efficiency    : 97%  (excellent for LFP chemistry)
+!   Discharge efficiency : 97%
+!   Idle self-discharge  : ~0.03%/h (negligible — included as %IdlingkW)
+!   Cycle life           : ~4000 cycles at 80% DoD
+!   Temperature range    : -20°C to +60°C (suitable for Sri Lanka)
+!   No thermal runaway risk — safest Li chemistry
+! ============================================================
+
+New Storage.Battery
+~ Bus1=MainBus               ! main LV busbar (after ATS)
+~ Phases=3
+~ kV=0.415                   ! 415 V line-to-line
+
+! ── Energy and power ratings ─────────────────────────────────
+~ kWhrated=670               ! total energy capacity (kWh)
+~ kWrated=100                ! max charge AND discharge power (kW)
+
+! ── State of charge limits ───────────────────────────────────
+~ %stored=23                 ! initial SOC = 23% (138 kWh at start)
+~ %reserve=15                ! SOC floor = 15%  — EMS Rule 1 (do not discharge below)
+!                              NOTE: %reserve sets the OpenDSS hard floor
+!                              EMS also enforces this in software as backup
+
+! ── Efficiency — LiFePO4 values ──────────────────────────────
+~ %EffCharge=97              ! charging efficiency 97%
+~ %EffDischarge=97           ! discharging efficiency 97%
+~ %IdlingkW=0.02             ! standby losses (0.02% of kWrated = 0.02 kW idle)
+
+! ── Control mode ─────────────────────────────────────────────
+~ DispMode=EXTERNAL          ! Python EMS controls this element
+~ State=IDLING               ! start in IDLE — EMS takes over at step 1
+
+! ── Voltage limits ───────────────────────────────────────────
+~ Vminpu=0.90                ! disconnect below 0.90 pu
+~ Vmaxpu=1.10                ! disconnect above 1.10 pu
+
+! ============================================================
+! HOW PYTHON EMS COMMANDS THIS ELEMENT:
+!
+! Charging:
+!   dss.Text.Command = "Edit Storage.Battery State=CHARGING kW=100"
+!
+! Discharging:
+!   dss.Text.Command = "Edit Storage.Battery State=DISCHARGING kW=100"
+!
+! Idle:
+!   dss.Text.Command = "Edit Storage.Battery State=IDLING"
+!
+! Read SOC:
+!   dss.Text.Command = "? Storage.Battery.%stored"
+!   soc = float(dss.Text.Result)
+!
+! EMS dispatches based on:
+!   SOC ≤ 15%  → force IDLING (Rule 1)
+!   SOC ≥ 90%  → stop charging (Rule 2)
+!   Max charge/discharge = kWh × C-rate = 670 × 0.1493 = 100 kW (Rule 3)
+!   Solar < max_charge → all solar to battery, load from grid (Rule 4a)
+!   Solar ≥ max_charge → battery at full rate, extra to load/grid (Rule 4b)
+!   Faculty load > 240 kW → discharge 15% of load = up to 36 kW (Rule 5)
+! ============================================================

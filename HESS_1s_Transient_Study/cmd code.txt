@@ -1,0 +1,2 @@
+cd Desktop\HESS_1s_Transient_Study\HESS_1s_Transient_Study
+python run_ablation_1s.py

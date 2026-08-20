@@ -1,0 +1,14 @@
+! ============================================================
+! SuperCap.dss - Supercapacitor 0.313 kWh / 44.0 kW
+! Bus: MainBus (415V, after ATS)
+! Controlled by Python EMS (DispMode=EXTERNAL)
+! Sized from real 1-second campus transient data — see
+! Supercapacitor_Sizing_Document.docx for full derivation:
+!   Hardware: Eaton XLM-62, 6-module series stack
+!   Design transient: 22 kW nameplate charger step
+!     (real observed max: 16.53 kW, EV charger switch-off, 16:00:00)
+!   Result: 313 Wh usable energy, 44.0 kW peak power
+!   Margins: 2.0x power, 3.04x capacitance over formal minimum
+! ============================================================
+
+New Storage.SuperCap Bus1=MainBus phases=3 kV=0.415 kWhrated=0.313 kWrated=44.0 %stored=80 %reserve=20 %EffCharge=97 %EffDischarge=97 %IdlingkW=0.05 DispMode=EXTERNAL State=IDLING Vminpu=0.90 Vmaxpu=1.10

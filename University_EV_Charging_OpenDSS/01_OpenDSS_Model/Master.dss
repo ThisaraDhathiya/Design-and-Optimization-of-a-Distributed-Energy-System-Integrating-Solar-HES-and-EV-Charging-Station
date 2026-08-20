@@ -1,0 +1,47 @@
+! ============================================================
+! Master.dss - University of Ruhuna Faculty of Engineering
+! UPDATED June 2026 - new cable data and building layout
+! ============================================================
+
+Clear
+
+New Circuit.RuhunaEngineering basekv=33 pu=1.00 angle=0 frequency=50 phases=3 bus1=SourceBus R1=0.001 X1=0.010 R0=0.001 X0=0.010
+
+Set DefaultBaseFreq=50
+Set VoltageBases=[33, 0.415, 0.24]
+Set algorithm=Newton
+Set maxiter=100
+Set tolerance=0.0001
+Set mode=Daily
+Set stepsize=15m
+Set number=1
+
+Redirect Transformer.dss
+Redirect Lines.dss
+Redirect LoadShapes.dss
+Redirect Loads.dss
+Redirect PVSystem.dss
+Redirect Battery.dss
+Redirect SuperCap.dss
+Redirect Monitors.dss
+
+CalcVoltageBases
+
+! ============================================================
+! BUS NAMES (updated June 2026):
+!   SourceBus, MainBus, PanelBus, GeneratorBus, EVBus
+!   MechWorkshopBus, HostelFBus (middle hostel, no solar)
+!   GuestHouseBus, AuditoriumBus, LibraryBus
+!   CivilDeptBus, MechDeptBus, ElecDeptBus
+!   LTDBus, LectureTheatreBus, AdminBus
+!   PumpHouseBus, SecurityBus
+!   UpperCanteenBus, LowerCanteenBus
+!   BoysHostelBBus, GirlsHostelBus
+!   HostelCBus, HostelDBus (Wanniya), HostelBlockBus
+!   GymBus
+! ============================================================
+
+! Force voltage base assignment to all LV buses
+! Running CalcVoltageBases twice fixes pu=0 issue in OpenDSS
+Set VoltageBases=[33, 0.415, 0.24]
+CalcVoltageBases

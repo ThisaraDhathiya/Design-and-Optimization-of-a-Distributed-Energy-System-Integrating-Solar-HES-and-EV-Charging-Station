@@ -1,0 +1,96 @@
+! ============================================================
+! Lines.dss - University of Ruhuna Faculty of Engineering
+! UPDATED June 2026 - real cable sizes and distances from Excel
+! All distances measured on site. Cable sizes confirmed.
+! UPDATED: HostelC cable upgraded 70mm2 -> 95mm2
+!          to reduce overvoltage from 1.079pu -> 1.057pu
+! ============================================================
+
+! ---- Linecodes (one per cable size used) -------------------
+New Linecode.XLPE_50_3ph  nphases=3 R1=0.387 X1=0.082 R0=1.161 X0=0.246 units=km normamps=144 emergamps=173
+New Linecode.XLPE_60_3ph  nphases=3 R1=0.306 X1=0.081 R0=0.918 X0=0.243 units=km normamps=163 emergamps=196
+New Linecode.XLPE_70_3ph  nphases=3 R1=0.268 X1=0.080 R0=0.804 X0=0.240 units=km normamps=178 emergamps=214
+New Linecode.XLPE_75_3ph  nphases=3 R1=0.246 X1=0.080 R0=0.738 X0=0.240 units=km normamps=196 emergamps=235
+New Linecode.XLPE_75_1ph  nphases=1 R1=0.246 X1=0.080 units=km normamps=196 emergamps=235
+New Linecode.XLPE_95_3ph  nphases=3 R1=0.193 X1=0.073 R0=0.579 X0=0.219 units=km normamps=220 emergamps=264
+New Linecode.XLPE_120_3ph nphases=3 R1=0.153 X1=0.079 R0=0.459 X0=0.237 units=km normamps=247 emergamps=296
+New Linecode.XLPE_150_3ph nphases=3 R1=0.124 X1=0.078 R0=0.372 X0=0.234 units=km normamps=272 emergamps=326
+
+! ---- Transformer to Panel room (not in table - short) -------
+New Line.Tx_to_Panel      Bus1=MainBus      Bus2=PanelBus          LineCode=XLPE_150_3ph Length=0.008   units=km phases=3
+
+! ---- Panel room to Workshop (24.52m, 75mm2) -----------------
+New Line.Panel_Workshop   Bus1=PanelBus     Bus2=MechWorkshopBus   LineCode=XLPE_75_3ph  Length=0.02452 units=km phases=3
+
+! ---- Panel room to Middle Hostel behind maintenance (52.97m, 60mm2)
+New Line.Panel_HostelF    Bus1=PanelBus     Bus2=HostelFBus        LineCode=XLPE_60_3ph  Length=0.05297 units=km phases=3
+
+! ---- Panel room to GuestHouse/Auditorium/Library feeder (60mm2)
+! One feeder taps at each building
+New Line.Panel_GuestHouse Bus1=PanelBus     Bus2=GuestHouseBus     LineCode=XLPE_60_3ph  Length=0.08538 units=km phases=3
+New Line.Panel_Auditorium Bus1=PanelBus     Bus2=AuditoriumBus     LineCode=XLPE_60_3ph  Length=0.16024 units=km phases=3
+New Line.Panel_Library    Bus1=PanelBus     Bus2=LibraryBus        LineCode=XLPE_120_3ph Length=0.25409 units=km phases=3
+
+! ---- Panel room to Departments feeder (150mm2)
+! Civil 71.87m, Mech 113.26m, Elec 164.46m
+New Line.Panel_CivilDept  Bus1=PanelBus     Bus2=CivilDeptBus      LineCode=XLPE_150_3ph Length=0.07187 units=km phases=3
+New Line.Panel_MechDept   Bus1=PanelBus     Bus2=MechDeptBus       LineCode=XLPE_150_3ph Length=0.11326 units=km phases=3
+New Line.Panel_ElecDept   Bus1=PanelBus     Bus2=ElecDeptBus       LineCode=XLPE_150_3ph Length=0.16446 units=km phases=3
+
+! ---- Panel room to LT DB (176.49m, 150mm2) ------------------
+New Line.Panel_LTDB       Bus1=PanelBus     Bus2=LTDBus            LineCode=XLPE_150_3ph Length=0.17649 units=km phases=3
+
+! ---- Panel room to Hostel C (376.88m, 95mm2) ----------------
+! UPGRADED from 70mm2 to 95mm2 to reduce overvoltage
+! Before: 1.079 pu (violation)   After: 1.057 pu (within limit)
+New Line.Panel_HostelC    Bus1=PanelBus     Bus2=HostelCBus        LineCode=XLPE_95_3ph  Length=0.37688 units=km phases=3
+
+! ---- Panel room to HostelD/Wanniya then Gym -----------------
+! Single line taps at HostelD (576.25m) then continues to Gym (+133.77m)
+! Note: Gym and HostelD PV disabled - overvoltage risk on long feeder
+New Line.Panel_HostelD    Bus1=PanelBus     Bus2=HostelDBus        LineCode=XLPE_75_3ph  Length=0.57625 units=km phases=3
+New Line.HostelD_Gym      Bus1=HostelDBus   Bus2=GymBus            LineCode=XLPE_75_3ph  Length=0.13377 units=km phases=3
+
+! ---- Panel room to EV Charging Station (50m, 50mm2) ---------
+New Line.Panel_EVBus      Bus1=PanelBus     Bus2=EVBus             LineCode=XLPE_50_3ph  Length=0.050   units=km phases=3
+
+! ---- Panel room to BESS + SuperCap (10m, 120mm2) ------------
+New Line.Panel_BESS       Bus1=PanelBus     Bus2=MainBus           LineCode=XLPE_120_3ph Length=0.010   units=km phases=3
+
+! ---- LT DB to Lecture Theatre (10.46m, 75mm2) ---------------
+New Line.LTDB_LecTheatre  Bus1=LTDBus       Bus2=LectureTheatreBus LineCode=XLPE_75_3ph  Length=0.01046 units=km phases=3
+
+! ---- LT DB to Admin (64m, 75mm2) ----------------------------
+New Line.LTDB_Admin       Bus1=LTDBus       Bus2=AdminBus          LineCode=XLPE_75_3ph  Length=0.064   units=km phases=3
+
+! ---- LT DB to PumpHouse then Security (75mm2) ---------------
+New Line.LTDB_PumpHouse   Bus1=LTDBus       Bus2=PumpHouseBus      LineCode=XLPE_75_3ph  Length=0.1306  units=km phases=3
+New Line.LTDB_Security    Bus1=LTDBus       Bus2=SecurityBus       LineCode=XLPE_75_3ph  Length=0.16546 units=km phases=3
+
+! ---- LT DB to Canteens (1-phase, 75mm2) ---------------------
+! UpperCanteen 106.97m, then LowerCanteen taps off (+38.42m)
+New Line.LTDB_UpperCanteen  Bus1=LTDBus.1         Bus2=UpperCanteenBus.1  LineCode=XLPE_75_1ph  Length=0.10697 units=km phases=1
+New Line.Upper_LowerCanteen Bus1=UpperCanteenBus.1 Bus2=LowerCanteenBus.1  LineCode=XLPE_75_1ph  Length=0.03842 units=km phases=1
+
+! ---- LT DB to Hostel B then Hostel A (75mm2) ----------------
+New Line.LTDB_HostelB     Bus1=LTDBus       Bus2=BoysHostelBBus    LineCode=XLPE_75_3ph  Length=0.21008 units=km phases=3
+
+! ---- LT DB to Hostel Block (short, assumed from LT DB) ------
+New Line.LTDB_HostelBlock Bus1=LTDBus       Bus2=HostelBlockBus    LineCode=XLPE_75_3ph  Length=0.050   units=km phases=3
+
+! ---- Generator to Panel room (3m assumed) -------------------
+New Line.Gen_to_Panel     Bus1=GeneratorBus Bus2=PanelBus          LineCode=XLPE_75_3ph  Length=0.003   units=km phases=3
+
+! ============================================================
+! CABLE UPGRADE LOG:
+!   Panel_HostelC : 70mm2 -> 95mm2 (June 2026)
+!     Reason: HostelCBus overvoltage 1.079pu with 135.3kWp PV
+!     Result: V reduced to 1.057pu (within 1.06pu limit)
+!
+! VOLTAGE WARNINGS - remaining issues:
+!   Panel_Auditorium : 160m at 60mm2 - PV 210kWp >> load 28.79kW
+!     -> overvoltage ~1.073pu. Recommend reduce PV to 155kWp
+!   Panel_Library    : 254m at 120mm2 - PV 125kWp >> load 12.11kW
+!     -> overvoltage ~1.072pu. Recommend reduce PV to 97kWp
+!   Panel_HostelD+Gym: 576+134m at 75mm2 - PV disabled (no panels)
+! ============================================================

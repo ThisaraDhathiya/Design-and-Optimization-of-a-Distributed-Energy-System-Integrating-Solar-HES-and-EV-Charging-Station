@@ -1,0 +1,7 @@
+threshold_kw,n_events,events_per_day,median_duration_s,max_magnitude_kw
+10,6,6,2.0,16.428300000000036
+20,0,0,,
+30,0,0,,
+50,0,0,,
+75,0,0,,
+100,0,0,,

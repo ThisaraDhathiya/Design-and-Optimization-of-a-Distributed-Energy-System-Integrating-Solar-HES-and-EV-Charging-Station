@@ -1,0 +1,32 @@
+
+BUSES AND NODES IN ACTIVE CIRCUIT: ruhunaengineering
+
+                                            Coord                                 Number of     Nodes
+  Bus                  Base kV             (x, y)                      Keep?       Nodes        connected ...
+
+"sourcebus"          33.000          (           NA,            NA )     No           3          1    2    3 
+"mainbus"            33.000          (           NA,            NA )     No           3          1    2    3 
+"panelbus"           33.000          (           NA,            NA )     No           3          1    2    3 
+"mechworkshopbus"    33.000          (           NA,            NA )     No           3          1    2    3 
+"hostelfbus"         33.000          (           NA,            NA )     No           3          1    2    3 
+"guesthousebus"      33.000          (           NA,            NA )     No           3          1    2    3 
+"auditoriumbus"      33.000          (           NA,            NA )     No           3          1    2    3 
+"librarybus"         33.000          (           NA,            NA )     No           3          1    2    3 
+"civildeptbus"       33.000          (           NA,            NA )     No           3          1    2    3 
+"mechdeptbus"        33.000          (           NA,            NA )     No           3          1    2    3 
+"elecdeptbus"        33.000          (           NA,            NA )     No           3          1    2    3 
+"ltdbus"             33.000          (           NA,            NA )     No           3          1    2    3 
+"hostelcbus"         33.000          (           NA,            NA )     No           3          1    2    3 
+"hosteldbus"         33.000          (           NA,            NA )     No           3          1    2    3 
+"gymbus"             33.000          (           NA,            NA )     No           3          1    2    3 
+"evbus"              33.000          (           NA,            NA )     No           3          1    2    3 
+"lecturetheatrebus"  33.000          (           NA,            NA )     No           3          1    2    3 
+"adminbus"           33.000          (           NA,            NA )     No           3          1    2    3 
+"pumphousebus"       33.000          (           NA,            NA )     No           3          1    2    3 
+"securitybus"        33.000          (           NA,            NA )     No           3          1    2    3 
+"uppercanteenbus"    33.000          (           NA,            NA )     No           3          1    2    3 
+"lowercanteenbus"    33.000          (           NA,            NA )     No           3          1    2    3 
+"boyshostelbbus"     33.000          (           NA,            NA )     No           3          1    2    3 
+"girlshostelbus"     33.000          (           NA,            NA )     No           3          1    2    3 
+"hostelblockbus"     33.000          (           NA,            NA )     No           3          1    2    3 
+"generatorbus"       33.000          (           NA,            NA )     No           3          1    2    3 

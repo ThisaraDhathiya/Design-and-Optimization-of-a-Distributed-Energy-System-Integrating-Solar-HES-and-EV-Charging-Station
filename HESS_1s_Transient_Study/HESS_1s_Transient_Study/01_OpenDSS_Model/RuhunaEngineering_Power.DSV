@@ -1,0 +1,63 @@
+SetProp, 1E050,   -1E050, 1E050, -1E050, 16777215, 16777215, 0, 4
+ClickOn
+SetProp, 1E050,   -1E050, 1E050, -1E050, 16777215, 16777215, 1, 0
+Xlabel, "X"
+Ylabel, "Y"
+TxtAlign, 1
+KeyClass, 1
+ChartCaption, "RuhunaEngineering:Power, max=2E003 "
+Line, "Line.tx_to_panel", "mainbus", "panelbus", 0, 6,  0, 0, 19.052559, 0, 0, 80, 0, 0, 16711680, 1, 0, 1, 0, 0, 16, 1
+Line, "Line.panel_workshop", "panelbus", "mechworkshopbus", 192, 6,  0, 0, 19.052559, 0, 0, 0, -30, 30, 16711680, 1, 0, 1, 0, 0, 16, 1
+Line, "Line.panel_hostelf", "panelbus", "hostelfbus", 384, 6,  0, 0, 19.052559, 0, 0, 0, -60, 0, 16711680, 1, 0, 1, 0, 0, 16, 1
+Line, "Line.panel_guesthouse", "panelbus", "guesthousebus", 576, 6,  0, 0, 19.052559, 0, 0, 0, 120, -60, 16711680, 1, 0, 1, 0, 0, 16, 1
+Line, "Line.panel_auditorium", "panelbus", "auditoriumbus", 768, 6,  0, 0, 19.052559, 0, 0, 0, 180, -120, 16711680, 1, 0, 1, 0, 0, 16, 1
+Line, "Line.panel_library", "panelbus", "librarybus", 960, 6,  0, 0, 19.052559, 0, 0, 0, 220, -200, 16711680, 1, 0, 1, 0, 0, 16, 1
+Line, "Line.panel_civildept", "panelbus", "civildeptbus", 1152, 6,  0, 0, 19.052559, 0, 0, 0, -100, -60, 16711680, 1, 0, 1, 0, 0, 16, 1
+Line, "Line.panel_mechdept", "panelbus", "mechdeptbus", 1344, 6,  0, 0, 19.052559, 0, 0, 0, -140, -90, 16711680, 1, 0, 1, 0, 0, 16, 1
+Line, "Line.panel_elecdept", "panelbus", "elecdeptbus", 1536, 6,  0, 0, 19.052559, 0, 0, 0, -180, -130, 16711680, 1, 0, 1, 0, 0, 16, 1
+Line, "Line.panel_ltdb", "panelbus", "ltdbus", 1728, 6,  0, 0, 19.052559, 0, 0, 0, 60, -160, 16711680, 1, 0, 1, 0, 0, 16, 1
+Line, "Line.panel_hostelc", "panelbus", "hostelcbus", 1920, 6,  0, 0, 19.052559, 0, 0, 0, -180, -300, 16711680, 1, 0, 1, 0, 0, 16, 1
+Line, "Line.panel_hosteld", "panelbus", "hosteldbus", 2112, 6,  0, 0, 19.052559, 0, 0, 0, -280, -450, 16711680, 1, 0, 1, 0, 0, 16, 1
+Line, "Line.hosteld_gym", "hosteldbus", "gymbus", 2304, 6,  0, 0, 19.052559, 0, -280, -450, -350, -560, 16711680, 1, 0, 1, 0, 0, 16, 1
+Line, "Line.panel_evbus", "panelbus", "evbus", 2496, 6,  0, 0, 19.052559, 0, 0, 0, 120, 0, 16711680, 1, 0, 1, 0, 0, 16, 1
+Line, "Line.panel_bess", "panelbus", "mainbus", 2688, 6,  0, 0, 19.052559, 0, 0, 0, 0, 80, 16711680, 1, 0, 1, 0, 0, 16, 1
+Line, "Line.ltdb_lectheatre", "ltdbus", "lecturetheatrebus", 2880, 6,  0, 0, 19.052559, 0, 60, -160, 60, -170, 16711680, 1, 0, 1, 0, 0, 16, 1
+Line, "Line.ltdb_admin", "ltdbus", "adminbus", 3072, 6,  0, 0, 19.052559, 0, 60, -160, 60, -230, 16711680, 1, 0, 1, 0, 0, 16, 1
+Line, "Line.ltdb_pumphouse", "ltdbus", "pumphousebus", 3264, 6,  0, 0, 19.052559, 0, 60, -160, 20, -300, 16711680, 1, 0, 1, 0, 0, 16, 1
+Line, "Line.ltdb_security", "ltdbus", "securitybus", 3456, 6,  0, 0, 19.052559, 0, 60, -160, 20, -340, 16711680, 1, 0, 1, 0, 0, 16, 1
+Line, "Line.ltdb_uppercanteen", "ltdbus.1", "uppercanteenbus.1", 3648, 2,  0, 0, 19.052559, 0, 60, -160, -60, -270, 16711680, 1, 0, 1, 0, 0, 16, 1
+Line, "Line.upper_lowercanteen", "uppercanteenbus.1", "lowercanteenbus.1", 3712, 2,  0, 0, 19.052559, 0, -60, -270, -60, -320, 16711680, 1, 0, 1, 0, 0, 16, 1
+Line, "Line.ltdb_hostelb", "ltdbus", "boyshostelbbus", 3776, 6,  0, 0, 19.052559, 0, 60, -160, 140, -370, 16711680, 1, 0, 1, 0, 0, 16, 1
+Line, "Line.ltdb_hostela", "ltdbus", "girlshostelbus", 3968, 6,  0, 0, 19.052559, 0, 60, -160, 180, -440, 16711680, 1, 0, 1, 0, 0, 16, 1
+Line, "Line.ltdb_hostelblock", "ltdbus", "hostelblockbus", 4160, 6,  0, 0, 19.052559, 0, 60, -160, 100, -200, 16711680, 1, 0, 1, 0, 0, 16, 1
+Line, "Line.gen_to_panel", "generatorbus", "panelbus", 4352, 6,  0, 0, 19.052559, 0, -80, 0, 0, 0, 16711680, 1, 0, 1, 0, 0, 16, 1
+Line, "transformer.maintransformer", "sourcebus", "mainbus", 4544, 8,  0, 0, 19.052559, 0, 0, 120, 0, 80, 8421504, 3, 0, 1, 0, 0, 16, 1
+Width, 4
+Text, 0, 80, 0, 8, "mainbus"
+Text, 0, 0, 0, 8, "panelbus"
+Text, -30, 30, 0, 8, "mechworkshopbus"
+Text, -60, 0, 0, 8, "hostelfbus"
+Text, 120, -60, 0, 8, "guesthousebus"
+Text, 180, -120, 0, 8, "auditoriumbus"
+Text, 220, -200, 0, 8, "librarybus"
+Text, -100, -60, 0, 8, "civildeptbus"
+Text, -140, -90, 0, 8, "mechdeptbus"
+Text, -180, -130, 0, 8, "elecdeptbus"
+Text, 60, -160, 0, 8, "ltdbus"
+Text, -180, -300, 0, 8, "hostelcbus"
+Text, -280, -450, 0, 8, "hosteldbus"
+Text, -350, -560, 0, 8, "gymbus"
+Text, 120, 0, 0, 8, "evbus"
+Text, 60, -170, 0, 8, "lecturetheatrebus"
+Text, 60, -230, 0, 8, "adminbus"
+Text, 20, -300, 0, 8, "pumphousebus"
+Text, 20, -340, 0, 8, "securitybus"
+Text, -60, -270, 0, 8, "uppercanteenbus"
+Text, -60, -320, 0, 8, "lowercanteenbus"
+Text, 140, -370, 0, 8, "boyshostelbbus"
+Text, 180, -440, 0, 8, "girlshostelbus"
+Text, 100, -200, 0, 8, "hostelblockbus"
+Text, -80, 0, 0, 8, "generatorbus"
+Range, -585.2, 455.2, -573.872, 119.728
+SetProp, -585.2,    455.2, -573.872, 119.728, 16777215, 16777215, 1, 0
+KeepAspect, 1

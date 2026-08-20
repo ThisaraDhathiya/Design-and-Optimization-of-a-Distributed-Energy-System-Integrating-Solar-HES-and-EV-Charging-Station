@@ -1,0 +1,52 @@
+! BusCoords.dss - University of Ruhuna Faculty of Engineering
+! Updated June 2026 - coordinates match updated SLD sketch
+! Units: metres relative to Panel Room = (0, 0)
+! X = east/west,  Y = north/south
+
+! ---- Source and main buses ---------------------------------
+SourceBus          0    120
+MainBus            0     80
+PanelBus           0      0
+GeneratorBus     -80      0
+EVBus             120      0
+
+! ---- Direct from Panel room (north/east cluster) ----------
+MechWorkshopBus   -30     30
+HostelFBus        -60      0
+
+! ---- Panel to Guest House / Auditorium / Library feeder ---
+GuestHouseBus     120    -60
+AuditoriumBus     180   -120
+LibraryBus        220   -200
+
+! ---- Panel to Department buildings feeder -----------------
+CivilDeptBus     -100    -60
+MechDeptBus      -140    -90
+ElecDeptBus      -180   -130
+
+! ---- Panel to LT DB ---------------------------------------
+LTDBus             60   -160
+
+! ---- From LT DB -------------------------------------------
+LectureTheatreBus  60   -170
+AdminBus           60   -230
+PumpHouseBus       20   -300
+SecurityBus        20   -340
+
+! ---- Canteens (single phase from LT DB) -------------------
+UpperCanteenBus   -60   -270
+LowerCanteenBus   -60   -320
+
+! ---- Hostel B and A from LT DB ----------------------------
+BoysHostelBBus    140   -370
+GirlsHostelBus    180   -440
+
+! ---- Hostel C direct from Panel ---------------------------
+HostelCBus       -180   -300
+
+! ---- Hostel D (Wanniya) and Gym direct from Panel ---------
+HostelDBus       -280   -450
+GymBus           -350   -560
+
+! ---- Hostel Block from LT DB ------------------------------
+HostelBlockBus    100   -200

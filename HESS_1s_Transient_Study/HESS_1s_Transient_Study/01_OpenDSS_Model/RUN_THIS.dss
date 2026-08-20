@@ -1,0 +1,41 @@
+! ============================================================
+! RUN_THIS.dss
+! University of Ruhuna - EV Charging Station
+! 
+! HOW TO USE:
+! 1. Open THIS file in OpenDSS
+! 2. Select ALL text (Ctrl+A)
+! 3. Press Ctrl+D
+! 
+! DO NOT open or run any other DSS file directly.
+! This file loads everything in the correct order.
+! ============================================================
+
+Clear
+
+New Circuit.RuhunaEngineering basekv=33 pu=1.00 angle=0 frequency=50 phases=3 bus1=SourceBus R1=0.001 X1=0.010 R0=0.001 X0=0.010
+
+Set DefaultBaseFreq=50
+Set VoltageBases=[33, 0.415, 0.24]
+Set algorithm=Newton
+Set maxiter=100
+Set tolerance=0.0001
+Set mode=Daily
+Set stepsize=15m
+Set number=1
+
+Redirect Transformer.dss
+Redirect Lines.dss
+Redirect LoadShapes.dss
+Redirect Loads.dss
+Redirect PVSystem.dss
+Redirect Battery.dss
+Redirect SuperCap.dss
+Redirect Monitors.dss
+
+Set VoltageBases=[33, 0.415, 0.24]
+CalcVoltageBases
+
+Solve mode=Snapshot
+
+Show Voltages LN nodes

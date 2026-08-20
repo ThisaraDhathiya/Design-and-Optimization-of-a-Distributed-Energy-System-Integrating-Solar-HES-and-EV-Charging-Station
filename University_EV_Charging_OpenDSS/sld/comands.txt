@@ -1,0 +1,34 @@
+
+Solve mode=Snapshot
+Show Voltages LN nodes
+
+Compile "C:\Users\HP\Desktop\University_EV_Charging_OpenDSS\01_OpenDSS_Model\Master.dss"
+
+Plot Circuit Power max=1000 dots=y labels=y subs=y C1=Blue
+
+Clear
+
+Compile "C:\Users\HP\Desktop\University_EV_Charging_OpenDSS\01_OpenDSS_Model\Master.dss"
+Solve mode=Snapshot
+Show Voltages LN nodes
+
+
+Compile "C:\Users\HP\Desktop\University_EV_Charging_OpenDSS\01_OpenDSS_Model\Master.dss"
+Solve mode=Snapshot
+Show Voltages LN nodes
+
+
+Compile "C:\Users\HP\Desktop\University_EV_Charging_OpenDSS\01_OpenDSS_Model\Master.dss"
+Solve mode=Snapshot
+Buscoords "C:\Users\HP\Desktop\University_EV_Charging_OpenDSS\01_OpenDSS_Model\BusCoords.dss"
+Plot Circuit Power max=2000 dots=y labels=y subs=y C1=Blue C2=Red
+Plot Profile Phases=All
+
+
+Compile "C:\Users\HP\Desktop\University_EV_Charging_OpenDSS\01_OpenDSS_Model\Master.dss"
+Solve mode=Snapshot
+Buscoords "C:\Users\HP\Desktop\University_EV_Charging_OpenDSS\01_OpenDSS_Model\BusCoords.dss"
+Plot Circuit Power max=2000 dots=y labels=y subs=y C1=Blue C2=Red
+Plot Profile Phases=All
+
+Show Voltages LN nodes

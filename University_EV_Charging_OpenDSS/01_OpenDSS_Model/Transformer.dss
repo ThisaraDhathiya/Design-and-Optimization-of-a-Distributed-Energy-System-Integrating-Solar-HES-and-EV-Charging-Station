@@ -1,0 +1,9 @@
+! ============================================================
+! Transformer.dss - University of Ruhuna Faculty of Engineering
+! Source: Lanka Transformers Limited nameplate (real data)
+! 1000 kVA, 33kV/415V, Dyn11, %Z=5.04%, ONAN cooling
+! ============================================================
+
+New Transformer.MainTransformer phases=3 windings=2 XHL=4.97 %NoLoadLoss=0.15 %LoadLoss=0.82
+~ Wdg=1 Bus=SourceBus kV=33    kVA=1000 conn=delta Rneut=-1
+~ Wdg=2 Bus=MainBus   kV=0.415 kVA=1000 conn=wye   Rneut=0
